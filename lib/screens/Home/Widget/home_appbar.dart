@@ -19,7 +19,7 @@ class customwidget extends StatelessWidget {
           icon: Image.asset(
             "assets/icon.png",
             height: 20,
-            width: 20,
+            width: 21,
           ),
         ),
         // const SizedBox(
