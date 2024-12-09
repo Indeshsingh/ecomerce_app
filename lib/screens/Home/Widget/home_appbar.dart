@@ -1,8 +1,8 @@
 import 'package:ecomerce_app/screens/constants.dart';
 import 'package:flutter/material.dart';
 
-class customwidget extends StatelessWidget {
-  const customwidget({
+class Customwidget extends StatelessWidget {
+  const Customwidget({
     super.key,
   });
 

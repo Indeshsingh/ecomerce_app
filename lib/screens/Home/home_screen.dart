@@ -13,26 +13,26 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 35,
               ),
 
               // for custom appbar
-              customwidget(),
-              SizedBox(
+              const Customwidget(),
+              const SizedBox(
                 height: 20,
               ),
               // for searchbar
-              MysearchBar(),
-              SizedBox(
+              const MysearchBar(),
+              const SizedBox(
                 height: 20,
               ),
               ImageSlider(),

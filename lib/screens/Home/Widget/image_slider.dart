@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class ImageSlider extends StatelessWidget {
-  const ImageSlider({super.key});
+  ImageSlider({super.key});
+
+  final PageController _pageController = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.bottomCenter,
       children: [
         SizedBox(
           height: 220,
@@ -13,6 +17,7 @@ class ImageSlider extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: PageView(
+              controller: _pageController,
               scrollDirection: Axis.horizontal,
               allowImplicitScrolling: true,
               physics: const ClampingScrollPhysics(),
@@ -32,7 +37,22 @@ class ImageSlider extends StatelessWidget {
               ],
             ),
           ),
-        )
+        ),
+        // SmoothPageIndicator at the bottom
+        Positioned(
+          bottom: 10,
+          child: SmoothPageIndicator(
+            controller: _pageController, // PageController
+            count: 3, // Number of pages
+            effect: const ExpandingDotsEffect(
+              activeDotColor: Colors.black,
+              dotColor: Colors.grey,
+              dotHeight: 8,
+              dotWidth: 8,
+              spacing: 8,
+            ),
+          ),
+        ),
       ],
     );
   }
