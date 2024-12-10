@@ -1,4 +1,5 @@
 import 'package:ecomerce_app/apphelpers/apphelper.dart';
+import 'package:ecomerce_app/screens/Details/details_screen.dart';
 import 'package:ecomerce_app/screens/Home/Widget/custom_card.dart';
 import 'package:ecomerce_app/screens/Home/Widget/home_appbar.dart';
 import 'package:ecomerce_app/screens/Home/Widget/image_slider.dart';
@@ -108,16 +109,21 @@ class SpecialItems extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: 6,
-      itemBuilder: (context, index) => CustomCard(
-        height: 20,
-        width: MediaQuery.of(context).size.width,
-        imagepath: "assets/img/men-removebg-preview.png",
+      itemBuilder: (context, index) => InkWell(
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const DetailsScreen()));
+        },
+        child: CustomCard(
+          height: 20,
+          width: MediaQuery.of(context).size.width,
+          imagepath: "assets/img/men-removebg-preview.png",
+        ),
       ),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         mainAxisSpacing: 20,
         crossAxisSpacing: 20,
-        //childAspectRatio: 1,
         mainAxisExtent: 180,
       ),
     );
