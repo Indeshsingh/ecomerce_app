@@ -127,7 +127,13 @@ class DetailsScreen extends StatelessWidget {
                         const Expanded(
                             child: TabBarView(children: [
                           Text(
-                              "Wind/Waterproof Trouser for men having fur inside..")
+                              "Wind/Waterproof Trouser for men having fur inside.."),
+                          Text(
+                            "Specifications go here.",
+                          ),
+                          Text(
+                            "Customer reviews go here.",
+                          ),
                         ]))
                       ],
                     ),
