@@ -1,6 +1,5 @@
 import 'package:ecomerce_app/screens/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MysearchBar extends StatelessWidget {
   const MysearchBar({super.key});

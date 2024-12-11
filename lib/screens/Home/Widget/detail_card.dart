@@ -15,11 +15,7 @@ class DetailCard extends StatelessWidget {
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height,
-                width: MediaQuery.of(context).size.width,
-                //height: MediaQuery.of(context).size.height,
-                color: Colors.grey,
+              Center(
                 child: PageView(
                   controller: pageController,
                   scrollDirection: Axis.horizontal,
@@ -48,35 +44,34 @@ class DetailCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                  top: 5,
-                  child: Row(
-                    children: [
-                      IconButton(
-                        style:
-                            IconButton.styleFrom(backgroundColor: Colors.white),
-                        onPressed: () {},
-                        icon: const Icon(Icons.arrow_back_ios),
-                      ),
-                      const SizedBox(
-                        width: 215,
-                      ),
-                      IconButton(
-                        style:
-                            IconButton.styleFrom(backgroundColor: Colors.white),
-                        onPressed: () {},
-                        icon: const Icon(Icons.share_outlined),
-                      ),
-                      IconButton(
-                        style:
-                            IconButton.styleFrom(backgroundColor: Colors.white),
-                        onPressed: () {},
-                        icon: const Icon(Icons.favorite_border_rounded),
-                      ),
-                    ],
-                  )),
+                top: 1,
+                left: 5,
+                child: IconButton(
+                  style: IconButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {},
+                  icon: const Icon(Icons.arrow_back_ios),
+                ),
+              ),
+              Positioned(
+                top: 1,
+                right: 50,
+                child: IconButton(
+                  style: IconButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {},
+                  icon: const Icon(Icons.share_outlined),
+                ),
+              ),
+              Positioned(
+                top: 1,
+                right: 5,
+                child: IconButton(
+                  style: IconButton.styleFrom(backgroundColor: Colors.white),
+                  onPressed: () {},
+                  icon: const Icon(Icons.favorite_border_rounded),
+                ),
+              ),
               Positioned(
                 bottom: 10,
-                // left: 140,
                 child: SmoothPageIndicator(
                   controller: pageController,
                   count: 5,
@@ -92,8 +87,6 @@ class DetailCard extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 10),
-        const SizedBox(height: 10),
       ],
     );
   }
