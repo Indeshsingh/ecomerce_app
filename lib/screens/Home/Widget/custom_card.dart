@@ -5,12 +5,16 @@ class CustomCard extends StatelessWidget {
   final double? imagesize;
   final double height;
   final double width;
+  final String title;
+  final String price;
   const CustomCard(
       {required this.height,
       required this.width,
       this.imagepath,
       this.imagesize,
-      super.key});
+      super.key,
+      required this.title,
+      required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -27,13 +31,17 @@ class CustomCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                height: 100,
-                width: 100,
-                child: Image.asset(
-                  imagepath ?? "",
-                  fit: BoxFit.contain,
-                ),
-              ),
+                  height: 100,
+                  width: 100,
+                  child: Image.asset(
+                    "assets/img/electronics_-removebg-preview.png",
+                    fit: BoxFit.contain,
+                  )
+                  // Image.network(
+                  //   imagepath ?? "",
+                  //   fit: BoxFit.contain,
+                  // ),
+                  ),
             ],
           ),
         ),
@@ -51,23 +59,24 @@ class CustomCard extends StatelessWidget {
             child: const Icon(Icons.favorite_border),
           ),
         ),
-        const Positioned(
-            left: 5,
-            bottom: 2,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("Waterproof Trouser"),
-                Row(
-                  children: [
-                    Text(
-                      "Rs. 1299",
-                      style: TextStyle(color: Colors.orange),
-                    )
-                  ],
-                )
-              ],
-            ))
+        Positioned(
+          left: 5,
+          bottom: 2,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(title),
+              Row(
+                children: [
+                  Text(
+                    price,
+                    style: const TextStyle(color: Colors.orange),
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
       ],
     );
   }

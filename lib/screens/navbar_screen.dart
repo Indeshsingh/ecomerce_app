@@ -1,4 +1,4 @@
-import 'package:ecomerce_app/screens/Cart/cart_screen.dart';
+import 'package:ecomerce_app/screens/cart_screen.dart';
 import 'package:ecomerce_app/screens/Home/home_screen.dart';
 import 'package:ecomerce_app/screens/constants.dart';
 import 'package:ecomerce_app/screens/favorite_screen.dart';
@@ -18,7 +18,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
     FavoriteScreen(),
     HomeScreen(),
     CartScreen(),
-    Scaffold()
+    //Scaffold()
   ];
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,9 @@ class _NavbarScreenState extends State<NavbarScreen> {
             ),
             IconButton(
               onPressed: () {
-                cuttentIndex = 3;
+                setState(() {
+                  cuttentIndex = 3;
+                });
               },
               icon: Icon(
                 Icons.shopping_cart_outlined,
