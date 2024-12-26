@@ -46,13 +46,26 @@ class ImageSlider extends StatelessWidget {
             count: 3, // Number of pages
             effect: const ExpandingDotsEffect(
               activeDotColor: Colors.black,
-              dotColor: Colors.grey,
+              dotColor: Colors.orange,
               dotHeight: 8,
               dotWidth: 8,
               spacing: 8,
             ),
           ),
         ),
+        Positioned(
+            bottom: 10,
+            left: 7,
+            child: ElevatedButton(
+              style: const ButtonStyle(
+                  backgroundColor: WidgetStatePropertyAll(Colors.deepOrange)),
+              onPressed: () {},
+              child: const Text(
+                "Shop Now",
+                //strutStyle: StrutStyle(fontSize: 8),
+                style: TextStyle(color: Colors.white, fontSize: 10),
+              ),
+            ))
       ],
     );
   }
