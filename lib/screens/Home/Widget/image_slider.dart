@@ -12,8 +12,8 @@ class ImageSlider extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         SizedBox(
-          height: 220,
-          width: double.infinity,
+          height: MediaQuery.of(context).size.height * 0.4,
+          width: MediaQuery.of(context).size.width * 0.999,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: PageView(
