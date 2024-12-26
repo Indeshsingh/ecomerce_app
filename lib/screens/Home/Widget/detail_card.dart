@@ -28,24 +28,24 @@ class DetailCard extends StatelessWidget {
                         // height: MediaQuery.of(context).size.height * 0.35,
                         fit: BoxFit.contain,
                       ),
-                      // Image.asset(
-                      //   "assets/img/men-removebg-preview.png",
-                      //    height: MediaQuery.of(context).size.height * 0.4,
-                      //   fit: BoxFit.contain,
-                      // ),
-                      // Image.asset(
-                      //   "assets/img/men-removebg-preview.png",
-                      //    height: MediaQuery.of(context).size.height * 0.4,
-                      //   fit: BoxFit.contain,
-                      // ),
-                      // Image.asset(
-                      //   "assets/img/men-removebg-preview.png",
-                      //   fit: BoxFit.contain,
-                      // ),
-                      // Image.asset(
-                      //   "assets/img/men-removebg-preview.png",
-                      //   fit: BoxFit.contain,
-                      // ),
+                      Image.asset(
+                        "assets/img/men-removebg-preview.png",
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        fit: BoxFit.contain,
+                      ),
+                      Image.asset(
+                        "assets/img/men-removebg-preview.png",
+                        height: MediaQuery.of(context).size.height * 0.4,
+                        fit: BoxFit.contain,
+                      ),
+                      Image.asset(
+                        "assets/img/men-removebg-preview.png",
+                        fit: BoxFit.contain,
+                      ),
+                      Image.asset(
+                        "assets/img/men-removebg-preview.png",
+                        fit: BoxFit.contain,
+                      ),
                     ],
                   ),
                 ),
@@ -77,7 +77,7 @@ class DetailCard extends StatelessWidget {
                   ),
                 ),
                 Positioned(
-                  bottom: 5,
+                  bottom: 30,
                   child: SmoothPageIndicator(
                     controller: pageController,
                     count: 5,

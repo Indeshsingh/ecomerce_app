@@ -22,9 +22,14 @@ class DetailsScreen extends StatelessWidget {
         body: Stack(
           children: [
             Container(
-              // color: Colors.white,
+              color: Colors.white,
               child: const Column(
-                children: [DetailCard()],
+                children: [
+                  SizedBox(
+                    height: 40,
+                  ),
+                  DetailCard()
+                ],
               ),
             ),
             Positioned(
