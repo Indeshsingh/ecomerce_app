@@ -9,15 +9,15 @@ class CartScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           "My cart",
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Stack(
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Stack(
               //alignment: Alignment.topRight,
               children: [
                 Container(
@@ -74,8 +74,8 @@ class CartScreen extends StatelessWidget {
                   bottom: 6,
                   right: 12,
                   child: Container(
-                    height: MediaQuery.of(context).size.height * 0.05,
-                    width: MediaQuery.of(context).size.height * 0.14,
+                    height: MediaQuery.of(context).size.height * 0.04,
+                    width: MediaQuery.of(context).size.width * 0.27,
                     decoration: BoxDecoration(
                       color: Colors.blueGrey,
                       border: Border.all(color: Colors.white),
@@ -108,9 +108,77 @@ class CartScreen extends StatelessWidget {
                   ),
                 )
               ],
-            )
-          ],
-        ),
+            ),
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.02,
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height * 0.3,
+            width: MediaQuery.of(context).size.width * 0.999,
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(25),
+                    topLeft: Radius.circular(25)),
+                color: Colors.white),
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 16.0, horizontal: 12.0),
+                      labelText: 'Enter Discount Code',
+                      suffixText: "Apply",
+                      suffixStyle: const TextStyle(color: Colors.deepOrange),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    children: [
+                      const Text("Subtotal"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.54,
+                      ),
+                      const Text("Rs.1200.00"),
+                    ],
+                  ),
+                  const Divider(),
+                  Row(
+                    children: [
+                      const Text("Total"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                      ),
+                      const Text("Rs.1200.00"),
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  ElevatedButton(
+                    style: const ButtonStyle(
+                        backgroundColor: WidgetStatePropertyAll(Colors.orange)),
+                    onPressed: () {},
+                    child: const Text(
+                      "Checkout",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

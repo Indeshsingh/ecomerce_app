@@ -1,5 +1,7 @@
 import 'package:ecomerce_app/apphelpers/apphelper.dart';
 import 'package:ecomerce_app/bloc/special_bloc.dart';
+import 'package:ecomerce_app/bloc/special_event.dart';
+import 'package:ecomerce_app/bloc/special_state.dart';
 import 'package:ecomerce_app/repository/special_repo.dart';
 import 'package:ecomerce_app/screens/Details/details_screen.dart';
 import 'package:ecomerce_app/screens/Home/Widget/custom_card.dart';
@@ -17,7 +19,7 @@ class HomeScreen extends StatelessWidget {
     return BlocProvider<SpecialBloc>(
       create: (context) {
         final specialBloc = SpecialBloc(SpecialRepo());
-        specialBloc.add(FetchSpecial());
+        specialBloc.add(FetchProducts());
         return specialBloc; // Return the bloc instance
       },
       child: Scaffold(
@@ -29,15 +31,8 @@ class HomeScreen extends StatelessWidget {
               builder: (context, state) {
                 if (state is SpecialLoading) {
                   // log("if lodinh state");
-                  return const Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [CircularProgressIndicator()],
-                  );
-                } else if (state is SpecialSuccess) {
-                  if (state.specialModel.isEmpty) {
-                    return const Center(child: Text("No specials available."));
-                  }
+                  return const Center(child: CircularProgressIndicator());
+                } else if (state is SpecialLoaded) {
                   // log("if suceess ui");
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +77,7 @@ class HomeScreen extends StatelessWidget {
                       GridView.builder(
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        itemCount: state.specialModel.length,
+                        itemCount: state.products.length,
                         itemBuilder: (context, index) => InkWell(
                           onTap: () {
                             Navigator.push(
@@ -95,9 +90,9 @@ class HomeScreen extends StatelessWidget {
                           child: CustomCard(
                             height: MediaQuery.of(context).size.height * 0.2,
                             width: MediaQuery.of(context).size.width * 0.2,
-                            title: state.specialModel[index].title ?? "",
-                            imagepath: state.specialModel[index].image ?? "",
-                            price: state.specialModel[index].price ?? "",
+                            title: state.products[index].title ?? "",
+                            imagepath: state.products[index].image ?? "",
+                            price: state.products[index].price ?? "",
                           ),
                         ),
                         gridDelegate:

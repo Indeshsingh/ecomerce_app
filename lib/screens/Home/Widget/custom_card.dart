@@ -30,14 +30,12 @@ class CustomCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                  height: 100,
-                  width: 100,
+              Expanded(
                   child: Image.asset(
-                    "assets/img/electronics_-removebg-preview.png",
-                    fit: BoxFit.contain,
-                  )
-                  // Image.network(
+                "assets/img/electronics_-removebg-preview.png",
+                fit: BoxFit.contain,
+              )
+                  //     Image.network(
                   //   imagepath ?? "",
                   //   fit: BoxFit.contain,
                   // ),
