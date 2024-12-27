@@ -2,6 +2,7 @@ import 'package:ecomerce_app/screens/cart_screen.dart';
 import 'package:ecomerce_app/screens/Home/home_screen.dart';
 import 'package:ecomerce_app/screens/constants.dart';
 import 'package:ecomerce_app/screens/favorite_screen.dart';
+import 'package:ecomerce_app/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class NavbarScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class _NavbarScreenState extends State<NavbarScreen> {
     FavoriteScreen(),
     HomeScreen(),
     CartScreen(),
+    ProfileScreen(),
     //Scaffold()
   ];
   @override

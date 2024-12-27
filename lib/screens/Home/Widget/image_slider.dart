@@ -5,6 +5,11 @@ class ImageSlider extends StatelessWidget {
   ImageSlider({super.key});
 
   final PageController _pageController = PageController();
+  final List<String> images = [
+    "assets/img/slider.png",
+    "assets/img/slider1.jpg",
+    "assets/img/slider2.jpg",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class ImageSlider extends StatelessWidget {
       alignment: Alignment.bottomCenter,
       children: [
         SizedBox(
-          height: MediaQuery.of(context).size.height * 0.4,
+          height: MediaQuery.of(context).size.height * 0.2,
           width: MediaQuery.of(context).size.width * 0.999,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(15),
@@ -21,20 +26,26 @@ class ImageSlider extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               allowImplicitScrolling: true,
               physics: const ClampingScrollPhysics(),
-              children: [
-                Image.asset(
-                  "assets/img/slider.png",
-                  fit: BoxFit.fill,
-                ),
-                Image.asset(
-                  "assets/img/slider1.jpg",
-                  fit: BoxFit.fill,
-                ),
-                Image.asset(
-                  "assets/img/slider2.jpg",
-                  fit: BoxFit.fill,
-                ),
-              ],
+              children: List.generate(
+                  3,
+                  (index) => Image.asset(
+                        images[index],
+                        fit: BoxFit.fill,
+                      )),
+              // children: [
+              //   Image.asset(
+              //     "assets/img/slider.png",
+              //     fit: BoxFit.fill,
+              //   ),
+              //   Image.asset(
+              //     "assets/img/slider1.jpg",
+              //     fit: BoxFit.fill,
+              //   ),
+              //   Image.asset(
+              //     "assets/img/slider2.jpg",
+              //     fit: BoxFit.fill,
+              //   ),
+              // ],
             ),
           ),
         ),
